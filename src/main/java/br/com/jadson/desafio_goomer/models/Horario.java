@@ -6,10 +6,10 @@ import br.com.jadson.desafio_goomer.models.enums.DiaSemana;
 import jakarta.persistence.Embeddable;
 
 @Embeddable
-public class HorarioFuncionamento {
+public class Horario {
     private DiaSemana dia;
 
-    private LocalTime horarioAbertura;
+    private LocalTime horarioInicio;
     
-    private LocalTime horarioFechamento;
+    private LocalTime horarioFim;
 }
