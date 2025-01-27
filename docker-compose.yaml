@@ -1,0 +1,10 @@
+services:
+  db:
+    image: postgres
+    container_name: postgres-container
+    environment:
+      POSTGRES_DB: goomer_listarango
+      POSTGRES_USER: user-goomer
+      POSTGRES_PASSWORD: pass-goomer
+    ports:
+      - 5432:5432
