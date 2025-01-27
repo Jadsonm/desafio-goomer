@@ -1,28 +1,28 @@
-CREATE TABLE  restaurants (
+CREATE TABLE  restaurantes (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
-    address VARCHAR(255) NOT NULL,
-    photo VARCHAR(255),
-    opening_hours TEXT NOT NULL
+    nome VARCHAR(255) NOT NULL,
+    endereco VARCHAR(255) NOT NULL,
+    foto VARCHAR(255),
+    horarios_funcionamento TEXT NOT NULL
 );
 
-CREATE TABLE  products (
+CREATE TABLE  produtos (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
-    price NUMERIC (10, 2) NOT NULL,
-    category VARCHAR(255),
-    photo VARCHAR(255),
-    restaurant_id BIGINT NOT NULL,
-    FOREIGN KEY (restaurant_id) REFERENCES restaurants(id) ON DELETE CASCADE
+    nome VARCHAR(255) NOT NULL,
+    preco NUMERIC (10, 2) NOT NULL,
+    categoria VARCHAR(255),
+    foto VARCHAR(255),
+    restaurante_id BIGINT NOT NULL,
+    FOREIGN KEY (restaurante_id) REFERENCES restaurantes(id) ON DELETE CASCADE
 );
 
-CREATE TABLE promotions(
+CREATE TABLE promocoes(
     id SERIAL PRIMARY KEY,
-    description TEXT,
-    price_promo NUMERIC(10,2),
-    days TEXT,
-    start_time TIME,
-    end_time TIME,
-    product_id BIGINT NOT NULL,
-    FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE
+    descricao TEXT,
+    preco_promotion NUMERIC(10,2),
+    dias TEXT,
+    horario_inicio TIME,
+    horario_termino TIME,
+    produtos_id BIGINT NOT NULL,
+    FOREIGN KEY (produtos_id) REFERENCES produtos(id) ON DELETE CASCADE
 );
